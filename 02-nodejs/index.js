@@ -37,30 +37,7 @@ function resolverUsuario(error, usuario) {
 
 }
 
-obterUsuario(function resolverUsuario(error, usuario) {
-    //null || "" || 0 === false
-    if (error) {
-        console.error('DEU RUIM em USUARIO', error)
-        return;
-    }
-    obterTelefone(usuario.id, function resolverTelefone(error1, telefone) {
-        if (error1) {
-            console.error('DEU RUIM em TELEFONE', error)
-            return;
-        }
-        obterEndereco(usuario.id, function resolverEndereco(error2, endereco){
-            if (error2){
-                console.error('DEU RUIM em ENDERECO', error)
-                return;
-            }
 
-            console.log(`
-            Nome: ${usuario.nome},
-            Endereco: ${endereco.rua},${endereco.numero}
-            Telefone: (${telefone.ddd})${telefone.telefone}
-            `)
-        })
-    })
 })
 //const telefone = obterTelefone(usuario.id)
 
